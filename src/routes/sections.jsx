@@ -2,11 +2,15 @@ import { lazy, Suspense } from 'react';
 import { Outlet, Navigate, useRoutes } from 'react-router-dom';
 
 import DashboardLayout from 'src/layouts/dashboard';
+import ForgetPassword from 'src/pages/forget-password';
+import ResetPassword from 'src/pages/reset-password';
+
 
 export const IndexPage = lazy(() => import('src/pages/app'));
 export const BlogPage = lazy(() => import('src/pages/blog'));
 export const UserPage = lazy(() => import('src/pages/user'));
 export const LoginPage = lazy(() => import('src/pages/login'));
+export const SignUpPage = lazy(() => import('src/pages/signup'));
 export const ProductsPage = lazy(() => import('src/pages/products'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
 
@@ -32,6 +36,18 @@ export default function Router() {
     {
       path: 'login',
       element: <LoginPage />,
+    },
+    {
+      path: 'signup',
+      element: <SignUpPage />,
+    },
+    {
+      path: 'forget-password',
+      element: <ForgetPassword />,
+    },
+    {
+      path: 'reset-password',
+      element: <ResetPassword />,
     },
     {
       path: '404',
